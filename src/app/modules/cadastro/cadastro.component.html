@@ -1,0 +1,26 @@
+<div class="form-card">
+  <h2>Seja bem-vindo(a)!</h2>
+  <p>Realize seu cadastro aqui para entrar na plataforma.</p>
+
+  <form (ngSubmit)="cadastrar()">
+    <label for="re">RE</label>
+    <input type="text" id="re" [(ngModel)]="re" name="re" required>
+
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" [(ngModel)]="nome" name="nome" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" [(ngModel)]="senha" name="senha" required>
+
+    <label for="tipo_acesso">Tipo de Acesso</label>
+    <select id="tipo_acesso" [(ngModel)]="tipo_acesso" name="tipo_acesso">
+      <option value="colaborador">Colaborador</option>
+      <option value="gestor">Gestor</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
