@@ -1,0 +1,94 @@
+<header class="header">
+  <div class="logo-box">
+    <img src="/src/assets/img/logo_cadastre.png" alt="Logo Alpha Secure">
+  </div>
+  <div class="user-box">
+    <span id="user-name">Olá, {{ userName }}</span>
+    <span class="user-role">Colaborador</span>
+  </div>
+</header>
+
+<section class="banner">
+  <img src="/src/assets/img/banner.png" alt="Banner Plataforma">
+</section>
+
+<section class="info-cards-container">
+  <div class="info-cards">
+    <div class="card">
+      <p>Ser uma empresa referência por sua <br> excelência em segurança e serviços.</p>
+      <img src="/src/assets/img/missao_icon.webp" alt="Missão">
+    </div>
+    <div class="card destaque">
+      <p>Disponibilizar ao mercado soluções em serviços agregando tecnologia, atendimentos personalizado e técnicas de trabalho.</p>
+      <img src="/src/assets/img/visao_icons.webp" alt="Visão">
+    </div>
+    <div class="card">
+      <p>Transparência, responsabilidade, ética e eficiência, consolidando assim a relação com nossos parceiros comerciais e colaboradores.</p>
+      <img src="/src/assets/img/valores_icon.webp" alt="Valores">
+    </div>
+  </div>
+</section>
+
+<div class="main-container">
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a routerLink="/perfil">Meu Perfil</a></li>
+        <li><a routerLink="/modulo" class="active">Módulos</a></li>
+        <li><a routerLink="/progresso">Meu Progresso</a></li>
+        <li><a routerLink="/feedback">Feedback</a></li>
+        <li><a routerLink="/configuracoes">Configurações</a></li>
+        <li><a routerLink="/login">Sair</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Pesquisar módulos...">
+    </div>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h3>Concluídos</h3>
+      </div>
+      <div class="stat-card">
+        <h3>Não Iniciados</h3>
+      </div>
+    </section>
+
+    <section class="modules">
+      <h2>Módulos Disponíveis</h2>
+      <div class="modules-carousel">
+        <div class="modules-wrapper" #wrapper>
+          <div class="modules-slide" *ngFor="let slide of modulos | slice:0:modulos.length; let i = index">
+            <div class="module-card" *ngIf="modulos[i]">
+              <img [src]="'/src/assets/img/' + modulos[i].img" [alt]="modulos[i].nome" class="module-img">
+              <h3>{{ modulos[i].nome }}</h3>
+              <div class="progress-bar">
+                <div class="progress-bar-inner" [style.width]="modulos[i].progresso + '%'"></div>
+              </div>
+              <button>Acessar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" (click)="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="footer">
+  <hr class="footer-separator">
+  <div class="footer-links">
+      <a href="#">Política de Privacidade</a> | 
+      <a href="#">Termos de Uso</a> | 
+      <a href="#">Suporte</a>
+  </div>
+  <p class="footer-copy">&copy; 2025 Alpha Secure. Todos os direitos reservados.</p>
+</footer>

@@ -1,0 +1,62 @@
+
+<header class="header">
+<div class="logo">
+<img src="assets/img/logo header.png" alt="Logo Alpha Secure">
+</div>
+<nav class="nav-links">
+ <a href="/login">Login</a>
+ <a href="#" class="highlight">Cadastre-se</a>
+</nav>
+</header>
+
+<main class="main-container">
+<div class="image-side">
+ <img src="assets/img/cadastro_sidee.png" alt="Imagem Cadastro">
+ </div>
+ <div class="form-side">
+ <div class="form-card">
+ <h2>Seja bem-vindo(a)!</h2>
+ <p>
+ Realize seu cadastro aqui para entrar na plataforma de treinamentos
+ <br />
+ internos do setor de monitoramento
+</p>
+<img src="assets/img/logo_cadastre.png" class="logo_cadastre">
+
+<form (ngSubmit)="cadastrar()">
+<label for="re">RE</label>
+<input type="text" id="re" [(ngModel)]="re" name="re" required placeholder="Digite seu RE..." />
+
+<label for="nome">Nome</label>
+<input type="text" id="nome" [(ngModel)]="nome" name="nome" required placeholder="Digite seu nome..." />
+
+<label for="email">Email</label>
+<input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Digite seu email..." />
+
+ <label for="senha">Senha</label>
+ <input type="password" id="senha" [(ngModel)]="senha" name="senha" required placeholder="Digite sua senha..." />
+
+<label for="tipo_acesso">Tipo de Acesso</label>
+<select id="tipo_acesso" [(ngModel)]="tipo_acesso" name="tipo_acesso" required>
+<option value="colaborador">Colaborador</option>
+<option value="gestor">Gestor</option>
+</select>
+
+<button type="submit">Cadastrar</button>
+</form>
+
+<p>Já possui conta? <a href="/login">Faça login</a></p>
+</div>
+ </div>
+</main>
+
+<footer class="footer">
+ <hr class="footer-separator" />
+ <div class="footer-links">
+ <a href="#">Política de Privacidade</a> |
+ <a href="#">Termos de Uso</a> |
+ <a href="#">Suporte</a>
+ </div>
+ <p class="footer-copy">&copy; 2025 Alpha Secure. Todos os direitos reservados.</p>
+</footer>
+
